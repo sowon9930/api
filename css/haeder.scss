@@ -1,0 +1,26 @@
+@import 'mixin';
+header{
+  position: absolute;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  box-sizing: border-box;
+  padding: 0 20px;
+  button{
+    color: #fff;
+    font-size: 2em;
+  }
+
+  h1{
+    height: 80%;
+    img{
+      height: 100%;
+    }
+  }
+  h1,button{
+    filter: drop-shadow(1px 1px 2px rgba(#000,0.5));
+  }
+}

@@ -1,0 +1,67 @@
+@import 'mixin';
+
+.hourly-section{
+  margin-top: 30px;
+  .inner{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgba(#000 , 0.2);
+    border-radius: 10px;
+    overflow: auto;
+    color: #fff;
+    overflow: hidden;
+    overflow-x: scroll;
+    .hour-container{
+      display: inline-flex;
+      position: relative;
+      .chart{
+        position: absolute;
+        width: calc(100% - 70px);
+        height: 300px;
+        left: 35px; bottom: 0;
+        .grid{
+          position: absolute;
+          top: -15px; left: -35px;
+          height: 300px;
+          width: 0;
+          span{
+            display: flex;
+            height: 9.909%;
+            font-size: 0.5em;
+            align-items: center;
+          }
+        }
+      }
+      ul{
+        display: inline-flex;
+        li{
+          width: 70px;
+          height: 450px;
+          box-sizing: border-box;
+          >div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            b{
+              display: block;
+              margin: 3px 0;
+              font-size: 0.8em;
+              i{
+                margin-right: 3px;
+              }
+            }
+            img{
+              width: 40px;
+              border-radius: 50%;
+            }
+          }
+        }//li
+      }//ul
+    }//hour-container
+  }//inner
+}//section

@@ -1,0 +1,229 @@
+@charset "UTF-8";
+.current-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 70px;
+}
+.current-section .more {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: #fff;
+}
+.current-section .more .minus {
+  display: none;
+}
+.current-section .more.active .plus {
+  display: none;
+}
+.current-section .more.active .minus {
+  display: block;
+}
+.current-section .more::after, .current-section .more::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  border-bottom: 2px solid #fff;
+}
+.current-section .more::after {
+  right: 100%;
+}
+.current-section .more::before {
+  left: 100%;
+}
+.current-section .inner {
+  width: 90%;
+  color: #fff;
+}
+.current-section .inner .address {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.current-section .inner .current-info { /* 동그라미 */
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.current-section .inner .current-info::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.current-section .inner .current-info .wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 87%;
+  height: 87%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+.current-section .inner .current-info .wrap .sun-set-rise { /* 일출, 일몰 원 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.current-section .inner .current-info .wrap .sun-set-rise .circle {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+}
+.current-section .inner .current-info .wrap .sun-set-rise .circle::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px solid palegoldenrod;
+}
+.current-section .inner .current-info .wrap .sun-set-rise time {
+  position: absolute;
+  top: 52%;
+  transform: translateX(-50%);
+  font-size: 0.85em;
+  color: palegoldenrod;
+}
+.current-section .inner .current-info .wrap .sun-set-rise time.sunrise {
+  left: 0;
+}
+.current-section .inner .current-info .wrap .sun-set-rise time.sunset {
+  left: 100%;
+}
+.current-section .inner .current-info .wrap .sun-set-rise time i {
+  display: block;
+}
+.current-section .inner .current-info .wrap .sun-set-rise .sun {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 50%;
+  height: 0;
+  transform-origin: right center;
+}
+.current-section .inner .current-info .wrap .sun-set-rise .sun i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: sun 1s infinite alternate;
+  text-shadow: 0 0 2px #fff;
+  color: lightsalmon;
+}
+@keyframes sun {
+  0% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+.current-section .inner .current-info .wrap .temp-min-max {
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.current-section .inner .current-info .wrap .temp-min-max b {
+  margin: 0 3px;
+}
+.current-section .inner .current-info .wrap .temp-min-max b sup {
+  vertical-align: bottom;
+  margin-left: 3px;
+}
+.current-section .inner .current-info .wrap .temp {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.current-section .inner .current-info .wrap .temp img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.current-section .inner .current-info .wrap .temp span b {
+  font-size: 3em;
+}
+.current-section .inner .current-info .wrap .temp span sup {
+  display: inline-block;
+  transform: translateY(-50%);
+}
+.current-section .inner .current-info .wrap .desc {
+  font-size: 1.2em;
+}
+.current-section .inner .current-info .wrap .rain-snow {
+  margin: 10px 0;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.current-section .inner .current-info .wrap .rain-snow > b {
+  margin: 0 10px;
+}
+.current-section .inner .current-info .wrap .rain-snow > b i {
+  margin-right: 5px;
+}
+.current-section .inner .current-info .wrap .rain-snow > b small {
+  font-size: 0.7em;
+}
+.current-section .inner .current-info .wrap .wind {
+  display: flex;
+  align-items: center;
+}
+.current-section .inner .current-info .wrap .wind b {
+  margin: 0 7px;
+}
+.current-section .inner .current-info .wrap .wind b.wind-deg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.current-section .inner .current-info .wrap .wind b.wind-speed i {
+  margin-right: 5px;
+}
+.current-section .inner .current-info .wrap .wind b.wind-speed small {
+  font-size: 0.7em;
+}
+.current-section .inner p.time {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+.current-section .inner p.time time {
+  display: block;
+}
+.current-section .inner p.time time.hh-mm {
+  font-size: 2.5em;
+}
+.current-section .inner p.time time.hh-mm small {
+  font-size: 0.5em;
+}/*# sourceMappingURL=current.css.map */
